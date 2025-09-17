@@ -53,3 +53,31 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 4. Test kubectl
 
 Lastly, open up your terminal and make sure that you can run kubectl version
+
+[ikhan@mn1 ~]$ sudo usermod -aG docker $USER && newgrp docker
+[ikhan@mn1 ~]$ minikube start
+* minikube v1.37.0 on Centos 9
+* Using the docker driver based on existing profile
+
+X The requested memory allocation of 3072MiB does not leave room for system overhead (total system memory: 3622MiB). You may face stability issues.
+* Suggestion: Start minikube with less memory allocated: 'minikube start --memory=3072mb'
+
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.48 ...
+* Updating the running docker "minikube" container ...
+* Preparing Kubernetes v1.34.0 on Docker 28.4.0 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: default-storageclass, storage-provisioner
+* kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+[ikhan@mn1 ~]$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+[ikhan@mn1 ~]$
+
