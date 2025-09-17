@@ -1,5 +1,11 @@
 Minikube Setup on Linux
 
+By default, Minikube historically used Docker as the container runtime, but it also supports others.
+
+Today, Minikube can work with several runtimes:
+
+Docker, containerd and CRI-O    -   Make sure one of these already installed (Use docker_install.sh script)
+
 These instructions should be valid for Debian, Ubuntu, or Mint Linux distributions. Your experience may vary if using other distributions such as RHEL, Arch, non-desktop distributions like Ubuntu server, or lightweight distros which may omit many expected tools.
 Install Minikube
 
