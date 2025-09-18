@@ -80,5 +80,17 @@ kubelet: Running
 apiserver: Running
 kubeconfig: Configured
 
-[ikhan@mn1 ~]$
+Expose your minikube container IP to external world.
+Easiest / recommended for short-lived access: kubectl port-forward (bind to host IP)
+
+Forward pod port 3000 to host port 31515 and bind to all interfaces (so other LAN hosts can reach):
+
+# forward directly to pod:
+kubectl port-forward --address 0.0.0.0 pod/client-pod 31515:3000
+
+# Or forward the Service port (maps local 31515 -> svc port 3050 -> target 3000)
+kubectl port-forward --address 0.0.0.0 svc/client-node-port 31515:3050
+
+
+Leave that command running (or run it under nohup/systemd).
 
