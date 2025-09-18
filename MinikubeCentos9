@@ -54,6 +54,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 Lastly, open up your terminal and make sure that you can run kubectl version
 
+O/p:
 [ikhan@mn1 ~]$ sudo usermod -aG docker $USER && newgrp docker
 [ikhan@mn1 ~]$ minikube start
 * minikube v1.37.0 on Centos 9
